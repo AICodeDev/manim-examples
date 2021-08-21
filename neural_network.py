@@ -236,22 +236,12 @@ class NeuralNetworkMobject(VGroup):
 
 class myNeuralNetwork(Scene):
     def construct(self):
-        myNetwork = NeuralNetworkMobject([10, 5, 1])
-        myNetwork.label_inputs('x')
-        myNetwork.label_outputs('y')
-        myNetwork.label_outputs_text("43")
+        myNetwork = NeuralNetworkMobject([2, 3])
 
 
-        
-        myNetwork.scale(0.75)
+
+        myNetwork.scale(4)
 
 
-        self.play(Write(myNerwork))
+        self.play(Write(myNetwork), run_time=4)
         self.wait(5)
-
-        
-
-
-
-
-        
