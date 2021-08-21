@@ -20,7 +20,7 @@ class MatrixExamples(Scene):
 
 
         
-        surr_col_1 = SurroundingRectangle(mat1.get_columns()[0])
+        surr_col_1 = SurroundingRectangle(mat1.get_columns()[0])   # 행, 열 박스 초기화
         surr_col_2 = SurroundingRectangle(mat1.get_columns()[1])
         surr_col_3 = SurroundingRectangle(mat1.get_columns()[2])
         surr_row_1 = SurroundingRectangle(mat1.get_rows()[0])
@@ -65,13 +65,16 @@ class MatrixExamples(Scene):
 
 
 
-        surr_col_1 = SurroundingRectangle(mat1.get_columns()[0])   # 행, 열 박스 그리
+        surr_col_1 = SurroundingRectangle(mat1.get_columns()[0])   # 행, 열 박스 초기화
         surr_col_2 = SurroundingRectangle(mat1.get_columns()[1])
         surr_col_3 = SurroundingRectangle(mat1.get_columns()[2])
         surr_row_1 = SurroundingRectangle(mat1.get_rows()[0])
         surr_row_2 = SurroundingRectangle(mat1.get_rows()[1])
         self.wait(7)
-        self.play(Write(surr_row_1), run_time=3)
+
+
+        
+        self.play(Write(surr_row_1), run_time=3)   # 행, 열 박스 그리기
         self.play(Write(surr_col_1), run_time=3)
         self.wait(7)
         self.play(ReplacementTransform(surr_col_1,surr_col_2), run_time=2)
@@ -79,7 +82,19 @@ class MatrixExamples(Scene):
         self.play(ReplacementTransform(surr_col_2,surr_col_3), run_time=2)
         self.wait(7)
         self.play(ReplacementTransform(surr_row_1,surr_row_2), run_time=2)
-        self.play(ReplacementTransform(surr_col_3,surr_col_1), run_time=2)
+
+
+
+        surr_col_1 = SurroundingRectangle(mat1.get_columns()[0])   # 행, 열 박스 초기화
+        surr_col_2 = SurroundingRectangle(mat1.get_columns()[1])
+        surr_col_3 = SurroundingRectangle(mat1.get_columns()[2])
+        surr_row_1 = SurroundingRectangle(mat1.get_rows()[0])
+        surr_row_2 = SurroundingRectangle(mat1.get_rows()[1])
+        self.wait(7)
+
+
+
+        self.play(ReplacementTransform(surr_col_3,surr_col_1), run_time=2)   # 행, 열 박스 그리기
         self.wait(7)
         self.play(ReplacementTransform(surr_col_1,surr_col_2), run_time=2)
         self.wait(7)
