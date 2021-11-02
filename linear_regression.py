@@ -75,7 +75,7 @@ class ArgMinExample(Scene):
         self.play(Create(labels_x, run_time=2)) 
         self.play(Create(labels_y, run_time=2))     
 
-        self.wait(5)
+        self.wait(15)
 
         self.play(Create(dot1))
         self.play(Create(dot2))
@@ -86,7 +86,7 @@ class ArgMinExample(Scene):
         self.play(Create(dot7))
         self.play(Create(dot8))
 
-        self.wait(5)
+        self.wait(12)
         
         self.play(Create(linear1, run_time=3))   
 
@@ -110,13 +110,12 @@ class ArgMinExample(Scene):
 
         self.play(Write(eq1))
 
-        self.wait(3)
+        self.wait(22)
 
         self.play(Write(framebox1))
         self.play(Transform(linear1, linear_a_high), run_time=1)
         self.play(Transform(linear1, linear_a_low), run_time=2)
-        self.play(Transform(linear1, linear5), run_time=2)
-        
+        self.play(Transform(linear1, linear5), run_time=2)     
 
         self.wait(3)
 
@@ -127,17 +126,17 @@ class ArgMinExample(Scene):
         self.wait(1)
         self.remove(framebox1)
 
-        self.wait(3)
+        self.wait(15)
 
         self.play(Create(line_1, run_time=1))
         self.play(Create(dot_predict))
 
-        self.wait(5)
+        self.wait(20)
 
         self.remove(dot_predict, eq1, line_1)
         self.play(Transform(linear1, linear_pre_train))
 
-        self.wait(3)
+        self.wait(22)
 
         self.
 
